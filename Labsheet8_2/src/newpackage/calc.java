@@ -464,8 +464,9 @@ public class calc extends javax.swing.JFrame {
 
     private void equalsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsButtonActionPerformed
         // TODO add your handling code here:
-        val2 = Double.parseDouble(numberField.getText());
-        
+        try {
+            val2 = Double.parseDouble(numberField.getText());
+
         if (operator.equals("+")){
             answer = val1+val2;
         }if (operator.equals("-")){
@@ -477,6 +478,9 @@ public class calc extends javax.swing.JFrame {
         }
         numberField.setText(Double.toString(answer));
         lastLabel.setText("");
+        } catch (Exception e) {
+        }
+        
     }//GEN-LAST:event_equalsButtonActionPerformed
 
     private void buttonMSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonMSActionPerformed
